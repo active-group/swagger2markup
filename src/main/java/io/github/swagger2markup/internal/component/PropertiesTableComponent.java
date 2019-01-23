@@ -199,7 +199,7 @@ public class PropertiesTableComponent extends MarkupComponent<PropertiesTableCom
 
                 nameColumnBuilder.add(propertyNameContent.toString());
                 descriptionColumnBuilder.add(descriptionContent.toString());
-                schemaColumnBuilder.add(propertyType.displaySchema(markupDocBuilder));
+                schemaColumnBuilder.add((propertyType != null) ? propertyType.displaySchema(markupDocBuilder) : "object");
             });
         }
 

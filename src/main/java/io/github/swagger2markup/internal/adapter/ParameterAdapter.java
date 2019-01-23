@@ -111,7 +111,7 @@ public class ParameterAdapter {
     }
 
     public String displaySchema(MarkupDocBuilder docBuilder) {
-        return type.displaySchema(docBuilder);
+        return (type != null) ? type.displaySchema(docBuilder) : "empty";
     }
 
     public String displayDefaultValue(MarkupDocBuilder docBuilder) {

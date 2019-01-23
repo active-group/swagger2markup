@@ -100,7 +100,7 @@ public class ResponseComponent extends MarkupComponent<ResponseComponent.Paramet
                         type = createInlineType(type, labels.getLabel(RESPONSE) + " " + responseName, operation.getId() + " " + labels.getLabel(RESPONSE) + " " + responseName, params.inlineDefinitions);
                     }
 
-                    schemaContent = type.displaySchema(markupDocBuilder);
+                    schemaContent = (type != null) ? type.displaySchema(markupDocBuilder) : "empty";
                 }
 
                 MarkupDocBuilder descriptionBuilder = copyMarkupDocBuilder(markupDocBuilder);

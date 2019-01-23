@@ -137,7 +137,8 @@ public class ParameterTableComponent extends MarkupComponent<ParameterTableCompo
     private String getParameterNameColumnContent(MarkupDocBuilder markupDocBuilder, ParameterAdapter parameter) {
         MarkupDocBuilder parameterNameContent = copyMarkupDocBuilder(markupDocBuilder);
 
-        parameterNameContent.boldTextLine(parameter.getName(), true);
+        String name = parameter.getName().equals("") ? "-" : parameter.getName();
+        parameterNameContent.boldTextLine(name, true);
         if (parameter.getRequired())
             parameterNameContent.italicText(labels.getLabel(FLAGS_REQUIRED).toLowerCase());
         else
